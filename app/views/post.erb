@@ -1,0 +1,9 @@
+<div class="spaces">
+  <h2><%= @post.title %></h2>
+  <h3>Written by: <%= @post.user.username %></h3>
+  <a href="<%= @post.url %>" class="post_link" target="_blank">Visit site</a>
+  <h3>👍 <%= @post.votes %></h3>
+  <br>
+  <hr>
+  <a href="/">Back to posts</a>
+</div>

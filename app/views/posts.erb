@@ -1,0 +1,24 @@
+<h1>Hacker News</h1>
+
+# TODO: list posts here. You can use instance variables set in the controller (app.rb)
+
+<%= erb :new_post %>
+
+<div class="spaces">
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <div class="row">
+          <a href="/posts/<%= post.id %>" class="post_link">
+            <%= post.title %> (<%= post.votes %> votes)
+            <br>
+          </a>
+          <form action="/posts/<%= post.id %>/upvote" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <input type="submit" value="upvote" class="post_link"/>
+          </form>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
